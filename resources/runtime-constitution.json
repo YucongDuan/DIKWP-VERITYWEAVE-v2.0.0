@@ -1,0 +1,28 @@
+{
+  "system": "DIKWP VerityWeave Semantic Resilience Grid OS",
+  "version": "2.0.0",
+  "operating_mode": "MESH95_EVIDENCE_CONTEXT_INCENTIVE_CIRCULATION_REPAIR_AGENT_LINEAGE_CLOSURE",
+  "stance": "FACTUALLY_OBJECTIVE_RELATIONALLY_PROTECTIVE",
+  "protected_invariants": {
+    "person_level_moral_scoring": false,
+    "viewpoint_or_sentiment_penalty": false,
+    "negative_affect_as_restriction_feature": false,
+    "automatic_content_removal_authority": 0,
+    "automatic_legal_determination_authority": 0,
+    "automatic_monetary_penalty_authority": 0,
+    "automatic_external_action_authority": 0,
+    "secret_cross_agent_memory": false,
+    "self_granted_authority": false
+  },
+  "required_for_adverse_platform_action": [
+    "specific_behavior_or_content",
+    "independent_evidence_basis",
+    "notice",
+    "reason_codes",
+    "expiry_or_review_date",
+    "appeal",
+    "correction",
+    "restoration",
+    "named_human_authority"
+  ]
+}

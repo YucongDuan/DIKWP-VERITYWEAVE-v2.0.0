@@ -1,0 +1,24 @@
+name: Protected-expression or false-positive report
+description: Report a case where criticism, whistleblowing, satire, distress, or another protected expression was mishandled.
+title: "[False positive] "
+labels: ["protected-expression", "evaluation"]
+body:
+  - type: textarea
+    id: case
+    attributes:
+      label: Case and context
+      description: Provide the smallest reproducible example without disclosing sensitive personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: harm
+    attributes:
+      label: Observed or plausible harm
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected treatment and reason
+    validations:
+      required: true

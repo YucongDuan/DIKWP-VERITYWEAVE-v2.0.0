@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="28" role="img" aria-label="SIRP-2000: L4 reference">
+  <linearGradient id="g" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-opacity=".15"/></linearGradient>
+  <rect width="240" height="28" rx="5" fill="#17324d"/>
+  <rect x="114" width="126" height="28" rx="5" fill="#1d8a83"/>
+  <rect width="240" height="28" rx="5" fill="url(#g)"/>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Arial,sans-serif" font-size="11" font-weight="700">
+    <text x="57" y="18">SIRP-2000</text><text x="177" y="18">L4 REFERENCE</text>
+  </g>
+</svg>

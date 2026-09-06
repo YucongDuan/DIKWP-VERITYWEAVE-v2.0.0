@@ -1,0 +1,504 @@
+{
+  "case_digest": "97aff46cf6de5e9e96f5876a672e850ec5f343cad4d13af3be85a36de94ce995",
+  "commons_support": {
+    "disqualifiers": [],
+    "eligible": false,
+    "integrity_score": 0.1461,
+    "reasons": [],
+    "support_mode": "NO_SUPPORT_PROPOSAL"
+  },
+  "confidence": 0.2283,
+  "decision": "INDEPENDENT_HUMAN_REVIEW",
+  "graph": {
+    "edges": [
+      {
+        "relation": "expresses",
+        "source": "content",
+        "target": "claim",
+        "weight": 1.0
+      },
+      {
+        "relation": "supports",
+        "source": "source",
+        "target": "claim",
+        "weight": 0.5831
+      },
+      {
+        "relation": "tests",
+        "source": "counterevidence",
+        "target": "claim",
+        "weight": 0.0
+      },
+      {
+        "relation": "shapes",
+        "source": "incentive",
+        "target": "content",
+        "weight": 0.36
+      },
+      {
+        "relation": "exposes",
+        "source": "distribution",
+        "target": "audience",
+        "weight": 0.85
+      },
+      {
+        "relation": "influences",
+        "source": "claim",
+        "target": "action",
+        "weight": 0.95
+      },
+      {
+        "relation": "interprets",
+        "source": "audience",
+        "target": "action",
+        "weight": 0.0841
+      },
+      {
+        "relation": "produces",
+        "source": "action",
+        "target": "outcome",
+        "weight": 1.0
+      },
+      {
+        "relation": "triggers",
+        "source": "outcome",
+        "target": "correction",
+        "weight": 0.25
+      },
+      {
+        "relation": "revises",
+        "source": "correction",
+        "target": "claim",
+        "weight": 0.1232
+      }
+    ],
+    "nodes": [
+      {
+        "attributes": {
+          "channel": "post",
+          "dikwp_source": "I",
+          "dikwp_target": "P",
+          "role": "marketing"
+        },
+        "kind": "content",
+        "label": "Science has proven this secret method cures anxiety 100 percent. Ignore your doctor. Buy the programme tonight before the offer disappears.",
+        "node_id": "content"
+      },
+      {
+        "attributes": {
+          "domain": "health",
+          "language": "en"
+        },
+        "kind": "claim",
+        "label": "Primary asserted meaning",
+        "node_id": "claim"
+      },
+      {
+        "attributes": {
+          "source_count": 0,
+          "traceability": 0.02
+        },
+        "kind": "evidence",
+        "label": "Sources and provenance",
+        "node_id": "source"
+      },
+      {
+        "attributes": {
+          "count": 0,
+          "visibility": 0.0
+        },
+        "kind": "evidence",
+        "label": "Counterevidence and falsifiers",
+        "node_id": "counterevidence"
+      },
+      {
+        "attributes": {
+          "monetized": true,
+          "paid_amplification": true
+        },
+        "kind": "incentive",
+        "label": "Commercial and status incentives",
+        "node_id": "incentive"
+      },
+      {
+        "attributes": {
+          "contexts": [
+            "acute_distress",
+            "limited_domain_literacy"
+          ],
+          "dependence": 0.72
+        },
+        "kind": "audience",
+        "label": "Audience and temporary vulnerability",
+        "node_id": "audience"
+      },
+      {
+        "attributes": {
+          "reach": 0.82,
+          "recommendation_intensity": 0.85,
+          "repetition": 0.76
+        },
+        "kind": "circulation",
+        "label": "Reach, repetition, and recommendation",
+        "node_id": "distribution"
+      },
+      {
+        "attributes": {
+          "stakes": 0.95
+        },
+        "kind": "decision",
+        "label": "Likely downstream action",
+        "node_id": "action"
+      },
+      {
+        "attributes": {
+          "known_outcomes": []
+        },
+        "kind": "outcome",
+        "label": "Observed or projected outcomes",
+        "node_id": "outcome"
+      },
+      {
+        "attributes": {
+          "appeal": true,
+          "channel": true
+        },
+        "kind": "repair",
+        "label": "Appeal and correction path",
+        "node_id": "correction"
+      }
+    ]
+  },
+  "high_impact": true,
+  "interventions": [
+    {
+      "action": "Display a high-visibility uncertainty and scope card.",
+      "automatic": true,
+      "expiry_hours": null,
+      "human_gate": false,
+      "layer": "reader",
+      "reason_codes": [
+        "HIGH_IMPACT_EVIDENCE_GAP"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Propose a temporary recommendation limit pending independent review.",
+      "automatic": false,
+      "expiry_hours": 72,
+      "human_gate": true,
+      "layer": "distribution",
+      "reason_codes": [
+        "HIGH_IMPACT_EVIDENCE_GAP"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Disable autoplay, infinite scroll, variable rewards, or exit penalties in the user-local view.",
+      "automatic": true,
+      "expiry_hours": null,
+      "human_gate": false,
+      "layer": "interface",
+      "reason_codes": [
+        "COMPULSIVE_DESIGN"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Attach notice, reason codes, evidence scope, expiry, appeal, and restoration path.",
+      "automatic": false,
+      "expiry_hours": null,
+      "human_gate": true,
+      "layer": "due_process",
+      "reason_codes": [
+        "DUE_PROCESS_REQUIRED"
+      ],
+      "reversible": true
+    }
+  ],
+  "invariants": {
+    "adverse_platform_action_requires_human_gate": true,
+    "appeal_required_for_adverse_action": true,
+    "automatic_content_removal_authority_zero": true,
+    "automatic_external_action_authority_zero": true,
+    "correction_path_required_for_adverse_action": true,
+    "deliberate_deception_not_inferred_without_verified_fabrication": true,
+    "negative_affect_alone_never_triggers_restriction": true,
+    "person_level_moral_scoring_prohibited": true,
+    "protected_expression_requires_independent_harm_basis_for_adverse_action": true,
+    "viewpoint_or_sentiment_penalty_prohibited": true
+  },
+  "limitations": [
+    "This is a transparent semantic-flow risk analysis, not a fact-check verdict, diagnosis, intent finding, or legal determination.",
+    "Text patterns cannot reliably establish a creator's state of mind; deliberate deception requires independent evidence.",
+    "High-stakes health, finance, legal, education, child-safety, and public-interest decisions require qualified human review.",
+    "Provenance can establish origin and edit history without proving that a claim is true.",
+    "Platform-level adverse actions require notice, reasons, expiry, appeal, correction, and restoration processes."
+  ],
+  "protected_expression": false,
+  "provenance": {
+    "ai_origin_declared": "unknown",
+    "external_network_used": false,
+    "generated_at": "2026-09-06T01:24:53.173920Z",
+    "input_digest": "97aff46cf6de5e9e96f5876a672e850ec5f343cad4d13af3be85a36de94ce995",
+    "method": "transparent_rules_plural_worlds_semantic_flow_graph_repair_first",
+    "system": "DIKWP VerityWeave Semantic Resilience Grid OS",
+    "version": "2.0.0"
+  },
+  "reason_codes": [
+    "COMPULSIVE_DESIGN_FRICTION",
+    "HIGH_IMPACT_EVIDENCE_OR_ACTIONABILITY_GAP"
+  ],
+  "repair_card": {
+    "affected_parties": [
+      "The intended audience",
+      "People excluded by the stated assumptions",
+      "People who bear downstream cost or risk",
+      "The creator, sponsor, distributor, and platform"
+    ],
+    "balanced_rewrite": "Treat this as a conditional claim rather than a universal rule. State who it applies to, the evidence and uncertainty, credible counterexamples, affected parties, incentives, likely costs, and a small reversible way to test it.",
+    "likely_misreadings": [
+      "A conditional observation applies to everyone.",
+      "A personal experience establishes general causation.",
+      "High confidence or popularity substitutes for evidence.",
+      "Disagreement demonstrates ignorance or bad faith."
+    ],
+    "missing_conditions": [
+      "The claim's source, scope, counterexamples, and observable falsifiers.",
+      "Pricing, affiliation, refund rights, failure cases, and conflicts of interest.",
+      "A reconstructable record of origin, edits, source lineage, and AI involvement."
+    ],
+    "reversible_next_steps": [
+      "Find one independent source and one serious counterexample.",
+      "Add scope, uncertainty, affected parties, and incentive disclosure before sharing.",
+      "Run a small time-bounded test rather than a high-cost or irreversible action.",
+      "Use a qualified human reviewer for high-stakes health, finance, legal, education, or child-safety claims."
+    ],
+    "stop_conditions": [
+      "Stop if the proposed action creates irreversible risk, suppresses dissent, or lacks a correction path.",
+      "Escalate imminent or unlawful harm to an authorized human process rather than relying on this tool."
+    ],
+    "useful_core": "The item may contain a useful question, local observation, or partial experience. That useful core should be preserved while its scope and evidence are tested.",
+    "verification_questions": [
+      "Is this a fact claim, interpretation, value judgment, personal experience, prediction, or sales promise?",
+      "Which independent source supports it, and which observation would weaken it?",
+      "Who is included and excluded by the claim?",
+      "Who gains money, status, attention, or control if the audience believes or shares it?",
+      "What is the lowest-risk reversible next step?",
+      "How can an affected person appeal, correct, refund, or exit?"
+    ]
+  },
+  "semantic_control_potential": 0.2818,
+  "signals": {
+    "actionability_hazard": {
+      "explanation": "The content pushes consequential action without proportionate evidence, safeguards, or reversibility.",
+      "key": "actionability_hazard",
+      "markers": [
+        "ignore your doctor"
+      ],
+      "restrictive_feature": true,
+      "score": 0.1944
+    },
+    "agent_propagation_risk": {
+      "explanation": "The same method or artifact can be rapidly amplified or inherited across automated systems.",
+      "key": "agent_propagation_risk",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.7399
+    },
+    "authority_laundering": {
+      "explanation": "Prestige or vague expertise substitutes for checkable evidence.",
+      "key": "authority_laundering",
+      "markers": [
+        "secret method"
+      ],
+      "restrictive_feature": true,
+      "score": 0.305
+    },
+    "compulsive_design": {
+      "explanation": "Interface and distribution features are optimized to prolong engagement or punish exit.",
+      "key": "compulsive_design",
+      "markers": [
+        "autoplay",
+        "infinite_scroll",
+        "streak_loss",
+        "variable_rewards"
+      ],
+      "restrictive_feature": true,
+      "score": 0.76
+    },
+    "context_compression": {
+      "explanation": "Omitted conditions, affected parties, counterexamples, or resource constraints.",
+      "key": "context_compression",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.076
+    },
+    "correction_obstruction": {
+      "explanation": "The content or service makes correction, appeal, refund, or dissent unusually difficult.",
+      "key": "correction_obstruction",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.12
+    },
+    "evidence_deficit": {
+      "explanation": "The gap between claim strength and traceable support.",
+      "key": "evidence_deficit",
+      "markers": [
+        "secret method"
+      ],
+      "restrictive_feature": true,
+      "score": 0.4169
+    },
+    "incentive_opacity": {
+      "explanation": "Commercial benefit, pricing, refund, or affiliation is hidden or under-disclosed.",
+      "key": "incentive_opacity",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.36
+    },
+    "negative_affect": {
+      "explanation": "Negative emotion or bad news. This signal is recorded but never independently triggers restriction.",
+      "key": "negative_affect",
+      "markers": [],
+      "restrictive_feature": false,
+      "score": 0.0
+    },
+    "provenance_weakness": {
+      "explanation": "Origin, edits, sources, and counterevidence are difficult to reconstruct.",
+      "key": "provenance_weakness",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.9876
+    },
+    "public_interest_value": {
+      "explanation": "Potential public value from adverse truth, evidence, warnings, or repair-enabling information.",
+      "key": "public_interest_value",
+      "markers": [],
+      "restrictive_feature": false,
+      "score": 0.0191
+    },
+    "repair_capacity": {
+      "explanation": "The content exposes scope, uncertainty, counterevidence, appeal, and correction paths.",
+      "key": "repair_capacity",
+      "markers": [],
+      "restrictive_feature": false,
+      "score": 0.1232
+    },
+    "uncertainty_laundering": {
+      "explanation": "Uncertainty is presented as settled fact or made resistant to correction.",
+      "key": "uncertainty_laundering",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.18
+    },
+    "vulnerability_exploitation": {
+      "explanation": "Pressure is coupled to temporary audience vulnerability; this is not a person-level ability rating.",
+      "key": "vulnerability_exploitation",
+      "markers": [
+        "acute_distress",
+        "limited_domain_literacy"
+      ],
+      "restrictive_feature": true,
+      "score": 0.0841
+    },
+    "zero_sum_polarization": {
+      "explanation": "Relationships or groups are framed as a forced winner-versus-loser conflict.",
+      "key": "zero_sum_polarization",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.068
+    }
+  },
+  "version": "2.0.0",
+  "worlds": [
+    {
+      "falsifiers": [
+        "New traceable evidence materially distinguishes the competing worlds."
+      ],
+      "key": "insufficient_evidence",
+      "label": "Insufficient evidence to classify intent or truth",
+      "supporting_reasons": [
+        "Provenance, sources, and counterevidence remain incomplete."
+      ],
+      "weight": 0.2934
+    },
+    {
+      "falsifiers": [
+        "Independent evidence supports the claim at the stated scope."
+      ],
+      "key": "negligent_overclaim",
+      "label": "Negligent overclaim or under-verified advice",
+      "supporting_reasons": [
+        "Claim strength exceeds evidence and uncertainty disclosure."
+      ],
+      "weight": 0.187
+    },
+    {
+      "falsifiers": [
+        "Evidence of concealed conflicts, fabrication, or coercive targeting."
+      ],
+      "key": "bounded_good_faith",
+      "label": "Bounded good-faith support or education",
+      "supporting_reasons": [
+        "Repair signals, qualifiers, and traceable sources reduce semantic control risk."
+      ],
+      "weight": 0.1716
+    },
+    {
+      "falsifiers": [
+        "Pricing, evidence, conflicts, failure cases, refund rights, and scope are fully disclosed."
+      ],
+      "key": "commercial_manipulation",
+      "label": "Commercial manipulation presented as knowledge",
+      "supporting_reasons": [
+        "A sales funnel, urgency, authority laundering, and audience vulnerability co-occur."
+      ],
+      "weight": 0.1603
+    },
+    {
+      "falsifiers": [
+        "The claim remains stable after conditions, counterexamples, and costs are added."
+      ],
+      "key": "good_faith_compression",
+      "label": "Good-faith but context-compressed communication",
+      "supporting_reasons": [
+        "The useful core may be real while conditions and affected parties are omitted."
+      ],
+      "weight": 0.1195
+    },
+    {
+      "falsifiers": [
+        "Independent evidence establishes fabrication, targeted abuse, or imminent unlawful harm."
+      ],
+      "key": "protected_adverse_truth",
+      "label": "Protected criticism, whistleblowing, warning, or adverse truth",
+      "supporting_reasons": [
+        "Public-interest value, sources, or a protected role warrant a strong preservation presumption."
+      ],
+      "weight": 0.0243
+    },
+    {
+      "falsifiers": [
+        "The content is presented as factual high-impact guidance or contains independent imminent harm."
+      ],
+      "key": "satire_or_expressive_speech",
+      "label": "Satire, fiction, or protected emotional expression",
+      "supporting_reasons": [
+        "The role and context may be expressive rather than instructional."
+      ],
+      "weight": 0.022
+    },
+    {
+      "falsifiers": [
+        "Intent is unproven or new evidence supports error rather than deception."
+      ],
+      "key": "coordinated_deception",
+      "label": "Coordinated or deliberate deception",
+      "supporting_reasons": [
+        "This world receives material weight only from verified fabrication or campaign evidence."
+      ],
+      "weight": 0.0218
+    }
+  ]
+}

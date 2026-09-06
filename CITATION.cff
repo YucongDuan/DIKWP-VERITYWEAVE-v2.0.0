@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: DIKWP VerityWeave Semantic Resilience Grid OS
+message: Cite this software using the metadata in this file.
+type: software
+version: 2.0.0
+date-released: 2026-09-06
+authors:
+  - family-names: Duan
+    given-names: Yucong
+license: Apache-2.0
+repository-code: https://github.com/YucongDuan/DIKWP-VerityWeave-Semantic-Resilience-Grid-OS
+abstract: Evidence-aware semantic-flow analysis, contextual repair, circulation governance, positive-commons support, appeals, and agent-lineage auditing.

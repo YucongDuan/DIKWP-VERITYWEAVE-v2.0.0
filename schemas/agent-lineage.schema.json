@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/dikwp/verityweave/schemas/agent-lineage.schema.json",
+  "title": "VerityWeave Agent Lineage Audit Case",
+  "type": "object",
+  "properties": {
+    "lineage_id": {"type": "string"},
+    "agent_count": {"type": "integer", "minimum": 1},
+    "shared_artifacts": {"type": "integer", "minimum": 0},
+    "shared_memory": {"type": "boolean"},
+    "hidden_communication_channels": {"type": "boolean"},
+    "successor_reuse": {"type": "boolean"},
+    "policy_digest_changes": {"type": "integer", "minimum": 0},
+    "external_tools_available": {"type": "boolean"},
+    "evaluator_or_control_plane_access": {"type": "boolean"},
+    "stop_signal_propagates": {"type": "boolean"},
+    "audit_log_complete": {"type": "boolean"},
+    "human_report_channel": {"type": "boolean"},
+    "self_repairing_persistence": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

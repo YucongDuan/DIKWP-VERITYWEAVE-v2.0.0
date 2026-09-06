@@ -1,0 +1,398 @@
+{
+  "counts": {
+    "implemented": 50,
+    "not_supported_by_design": 4,
+    "partial": 10
+  },
+  "implementation": "DIKWP VerityWeave Semantic Resilience Grid OS",
+  "reference_level": "L4-reference",
+  "requirements": [
+    {
+      "id": "SIRP-2000-001",
+      "level": "L0",
+      "requirement": "Behavior-level analysis; no person-level moral score",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-002",
+      "level": "L0",
+      "requirement": "Negative affect excluded from restriction features",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-003",
+      "level": "L0",
+      "requirement": "Protected-expression presumption",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-004",
+      "level": "L0",
+      "requirement": "Person-level morality, loyalty, intelligence, positivity, and social-worth scores prohibited",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-005",
+      "level": "L0",
+      "requirement": "Contextual, purpose-limited vulnerability",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-006",
+      "level": "L0",
+      "requirement": "Domain, role, language, channel, and audience context",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-007",
+      "level": "L0",
+      "requirement": "Sources, counterevidence, outcomes, and correction fields",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-008",
+      "level": "L0",
+      "requirement": "Analysis limitations and scope disclosure",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-009",
+      "level": "L1",
+      "requirement": "Independent multidimensional signals",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-010",
+      "level": "L1",
+      "requirement": "At least two non-isomorphic world hypotheses",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-011",
+      "level": "L1",
+      "requirement": "Deliberate deception not inferred without independent evidence",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-012",
+      "level": "L1",
+      "requirement": "Semantic-flow graph",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-013",
+      "level": "L1",
+      "requirement": "Traceable DIKWP transition fields",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-014",
+      "level": "L1",
+      "requirement": "Provenance is not truth",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-015",
+      "level": "L1",
+      "requirement": "AI origin does not independently determine truth or restriction",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-016",
+      "level": "L1",
+      "requirement": "Uncertainty and falsifiers exposed",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-017",
+      "level": "L2",
+      "requirement": "Context repair card",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-018",
+      "level": "L2",
+      "requirement": "Reversible reality-contact step",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-019",
+      "level": "L2",
+      "requirement": "Automatic user-local reversible friction",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-020",
+      "level": "L2",
+      "requirement": "Compulsive and deceptive interface audit",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-021",
+      "level": "L2",
+      "requirement": "Stopping points and recommender controls",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-022",
+      "level": "L2",
+      "requirement": "Positive semantic commons support proposal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-023",
+      "level": "L2",
+      "requirement": "Commons support independent of ideology or positive sentiment",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-024",
+      "level": "L2",
+      "requirement": "Provenance-preserving translation and accessibility support",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-025",
+      "level": "L3",
+      "requirement": "Least-restrictive effective intervention",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-026",
+      "level": "L3",
+      "requirement": "Named human authority for platform adverse action",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-027",
+      "level": "L3",
+      "requirement": "Creator or user notice",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-028",
+      "level": "L3",
+      "requirement": "Specific reason codes and evidence basis",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-029",
+      "level": "L3",
+      "requirement": "Expiry or scheduled review",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-030",
+      "level": "L3",
+      "requirement": "Accessible appeal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-031",
+      "level": "L3",
+      "requirement": "Correction channel",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-032",
+      "level": "L3",
+      "requirement": "Restoration support",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-033",
+      "level": "L3",
+      "requirement": "Monetization conflict, price, refund, failure-case, and scope disclosures",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-034",
+      "level": "L3",
+      "requirement": "Protected-expression stress-test requirement",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-035",
+      "level": "L3",
+      "requirement": "Qualified human review for high-stakes domains",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-036",
+      "level": "L3",
+      "requirement": "Automatic removal, penalty, and legal determination disabled",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-037",
+      "level": "L4",
+      "requirement": "Five-receipt correction closure",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-038",
+      "level": "L4",
+      "requirement": "Consequential use blocked during material appeal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-039",
+      "level": "L4",
+      "requirement": "Append-only responsibility ledger",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-040",
+      "level": "L4",
+      "requirement": "Agent policy, prompt, artifact, memory, credential, and successor lineage",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-041",
+      "level": "L4",
+      "requirement": "Stop and revocation propagation",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-042",
+      "level": "L4",
+      "requirement": "Successor reauthorization",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-043",
+      "level": "L4",
+      "requirement": "Control-plane separation",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-044",
+      "level": "L4",
+      "requirement": "Reward-compatible human-report channel",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-045",
+      "level": "L4",
+      "requirement": "AT Protocol label reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-046",
+      "level": "L4",
+      "requirement": "C2PA reference assertion",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-047",
+      "level": "L4",
+      "requirement": "Statement-of-reasons reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-048",
+      "level": "L4",
+      "requirement": "W3C PROV reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-049",
+      "level": "L4",
+      "requirement": "JSON Schemas and OpenAPI",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-050",
+      "level": "L4",
+      "requirement": "Bounded deterministic agent tools without external enforcement",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-051",
+      "level": "L5",
+      "requirement": "Signed and revocable production policy bundles",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-052",
+      "level": "L5",
+      "requirement": "Independent transparency service",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-053",
+      "level": "L5",
+      "requirement": "Independent multilingual and dialectal calibration",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-054",
+      "level": "L5",
+      "requirement": "Jurisdiction-specific lawful-action connectors",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-055",
+      "level": "L5",
+      "requirement": "Institutionally independent appeals",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-056",
+      "level": "L5",
+      "requirement": "Longitudinal effectiveness and protected-expression evaluation",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-057",
+      "level": "L5",
+      "requirement": "Data-protection and human-rights impact assessment",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-058",
+      "level": "L5",
+      "requirement": "Independent security review",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-059",
+      "level": "L5",
+      "requirement": "Production key management and rotation",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-060",
+      "level": "L5",
+      "requirement": "Public aggregate action, reversal, and restoration reporting",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-061",
+      "level": "DESIGN",
+      "requirement": "Automatic content removal in the reference core",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-062",
+      "level": "DESIGN",
+      "requirement": "Person-level moral or cognition scoring",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-063",
+      "level": "DESIGN",
+      "requirement": "Viewpoint or sentiment penalties",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-064",
+      "level": "DESIGN",
+      "requirement": "Secret blacklists and undeclared profile propagation",
+      "status": "not_supported_by_design"
+    }
+  ],
+  "specification": "SIRP-2000:2026-DRAFT",
+  "third_party_certification": false,
+  "version": "2.0.0"
+}

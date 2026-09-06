@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "principle": "Reduce manipulation and harmful circulation while preserving adverse truth, criticism, satire, and distress expression.",
+  "layers": [
+    {"level": 0, "name": "preserve", "examples": ["protected adverse truth", "criticism", "distress expression"]},
+    {"level": 1, "name": "context repair", "examples": ["scope card", "source lineage", "counterexample"]},
+    {"level": 2, "name": "user-local friction", "examples": ["share pause", "read-before-forwarding", "action checklist"]},
+    {"level": 3, "name": "interface de-amplification", "examples": ["disable autoplay", "stopping points", "chronological view"]},
+    {"level": 4, "name": "circulation proposal", "examples": ["temporary recommender limit pending review"]},
+    {"level": 5, "name": "monetization gate", "examples": ["conflict disclosure", "refund terms", "failure cases"]},
+    {"level": 6, "name": "authorized safety or legal escalation", "examples": ["imminent harm", "lawful order"]}
+  ]
+}

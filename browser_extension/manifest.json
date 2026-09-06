@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "DIKWP VerityWeave Local Review",
+  "version": "2.0.0",
+  "description": "Analyze selected text locally for evidence, context, incentive, and action-risk signals without sending it to a server.",
+  "permissions": ["contextMenus", "storage"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html"},
+  "icons": {},
+  "host_permissions": []
+}

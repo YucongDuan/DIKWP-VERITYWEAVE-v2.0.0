@@ -1,0 +1,23 @@
+name: Controlled deployment report
+description: Share a bounded pilot, including failures, appeals, and correction outcomes.
+title: "[Deployment] "
+labels: ["deployment", "evidence"]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Deployment scope and authority
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Outcomes, protected-expression errors, and appeal results
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations and negative results
+    validations:
+      required: true

@@ -1,0 +1,210 @@
+{
+  "$defs": {
+    "unit": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    }
+  },
+  "$id": "https://example.org/dikwp/verityweave/schemas/semantic-flow-case.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "properties": {
+        "audience_dependence": {
+          "$ref": "#/$defs/unit"
+        },
+        "counterevidence_visibility": {
+          "$ref": "#/$defs/unit"
+        },
+        "creator_power": {
+          "$ref": "#/$defs/unit"
+        },
+        "decision_stakes": {
+          "$ref": "#/$defs/unit"
+        },
+        "evidence_quality": {
+          "$ref": "#/$defs/unit"
+        },
+        "platform_power": {
+          "$ref": "#/$defs/unit"
+        },
+        "price_transparency": {
+          "$ref": "#/$defs/unit"
+        },
+        "reach": {
+          "$ref": "#/$defs/unit"
+        },
+        "recommendation_intensity": {
+          "$ref": "#/$defs/unit"
+        },
+        "refund_transparency": {
+          "$ref": "#/$defs/unit"
+        },
+        "repetition": {
+          "$ref": "#/$defs/unit"
+        },
+        "source_traceability": {
+          "$ref": "#/$defs/unit"
+        },
+        "uncertainty_disclosure": {
+          "$ref": "#/$defs/unit"
+        }
+      }
+    }
+  ],
+  "properties": {
+    "addictive_features": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "affiliate_or_sales_funnel": {
+      "type": "boolean"
+    },
+    "ai_origin": {
+      "enum": [
+        "human",
+        "ai",
+        "mixed",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "appeal_available": {
+      "type": "boolean"
+    },
+    "audience_context": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "authorized_human_review": {
+      "type": "boolean"
+    },
+    "case_id": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "commercial_conflict_disclosed": {
+      "type": "boolean"
+    },
+    "content_role": {
+      "enum": [
+        "advice",
+        "personal_experience",
+        "criticism",
+        "whistleblowing",
+        "marketing",
+        "news",
+        "education",
+        "entertainment",
+        "distress_expression",
+        "satire"
+      ],
+      "type": "string"
+    },
+    "correction_channel_available": {
+      "type": "boolean"
+    },
+    "counterevidence": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "creator_notified": {
+      "type": "boolean"
+    },
+    "dikwp_source_position": {
+      "enum": [
+        "D",
+        "I",
+        "K",
+        "W",
+        "P"
+      ],
+      "type": "string"
+    },
+    "dikwp_target_position": {
+      "enum": [
+        "D",
+        "I",
+        "K",
+        "W",
+        "P"
+      ],
+      "type": "string"
+    },
+    "domain": {
+      "enum": [
+        "general",
+        "family_parenting",
+        "health",
+        "finance",
+        "education",
+        "politics_public_interest",
+        "relationships",
+        "commercial_knowledge",
+        "news_media",
+        "workplace"
+      ],
+      "type": "string"
+    },
+    "imminent_harm_or_illegal": {
+      "type": "boolean"
+    },
+    "known_outcomes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "language": {
+      "default": "en",
+      "type": "string"
+    },
+    "monetized": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "paid_amplification": {
+      "type": "boolean"
+    },
+    "provenance_manifest_present": {
+      "type": "boolean"
+    },
+    "source_links": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "text": {
+      "maxLength": 200000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "verified_fabrication": {
+      "type": "boolean"
+    },
+    "verified_harm": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "title": "VerityWeave Semantic Flow Case",
+  "type": "object"
+}

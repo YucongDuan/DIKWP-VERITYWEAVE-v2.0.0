@@ -1,0 +1,19 @@
+{
+  "name": "doomscroll-feed",
+  "autoplay": true,
+  "infinite_scroll": true,
+  "variable_rewards": true,
+  "streak_loss": true,
+  "push_frequency": 0.9,
+  "read_receipt_pressure": true,
+  "public_rankings": true,
+  "forced_continuity": true,
+  "cancellation_friction": true,
+  "default_opt_in": true,
+  "opaque_recommender": true,
+  "youth_audience": true,
+  "acute_distress_audience": true,
+  "natural_stopping_points": false,
+  "chronological_option": false,
+  "explanation_controls": false
+}

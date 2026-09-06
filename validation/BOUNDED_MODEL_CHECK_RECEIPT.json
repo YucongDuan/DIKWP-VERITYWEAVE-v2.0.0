@@ -1,0 +1,24 @@
+{
+  "checked_transitions": 2428,
+  "invariant_violations": 0,
+  "invariants": [
+    "external action authority remains zero",
+    "negative affect alone cannot activate adverse action",
+    "protected expression requires independent harm basis",
+    "adverse action requires evidence, named authority, notice, and appeal",
+    "consequential use is blocked during appeal",
+    "stop deactivates tasks and successor authority"
+  ],
+  "maximum_shortest_path_depth": 16,
+  "model": "SIRP-2000 bounded reference workflow",
+  "passed": true,
+  "reachability": {
+    "explicit_successor_reauthorization": true,
+    "five_receipt_correction_closure": true,
+    "protected_negative_expression_without_adverse_action": true
+  },
+  "reachable_states": 572,
+  "scope_boundary": "This finite-state exploration does not prove arbitrary production deployments, model behavior, factual accuracy, or legal compliance.",
+  "version": "2.0.0",
+  "violation_examples": []
+}

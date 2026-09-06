@@ -1,0 +1,1032 @@
+test_analyze_writes_json_and_markdown (test_cli_packaging.CliAndPackagingTests.test_analyze_writes_json_and_markdown) ... {
+  "case_digest": "5e3eedb6b87b5592bec2528620e2da9cc4e3d415ca51b0043584de6b87b0b68f",
+  "commons_support": {
+    "disqualifiers": [
+      "MATERIAL_INCENTIVE_OPACITY"
+    ],
+    "eligible": false,
+    "integrity_score": 0.1953,
+    "reasons": [],
+    "support_mode": "NO_SUPPORT_PROPOSAL"
+  },
+  "confidence": 0.2641,
+  "decision": "MONETIZATION_DISCLOSURE_GATE",
+  "graph": {
+    "edges": [
+      {
+        "relation": "expresses",
+        "source": "content",
+        "target": "claim",
+        "weight": 1.0
+      },
+      {
+        "relation": "supports",
+        "source": "source",
+        "target": "claim",
+        "weight": 0.6579999999999999
+      },
+      {
+        "relation": "tests",
+        "source": "counterevidence",
+        "target": "claim",
+        "weight": 0.05
+      },
+      {
+        "relation": "shapes",
+        "source": "incentive",
+        "target": "content",
+        "weight": 0.7243
+      },
+      {
+        "relation": "exposes",
+        "source": "distribution",
+        "target": "audience",
+        "weight": 0.85
+      },
+      {
+        "relation": "influences",
+        "source": "claim",
+        "target": "action",
+        "weight": 0.75
+      },
+      {
+        "relation": "interprets",
+        "source": "audience",
+        "target": "action",
+        "weight": 0.1872
+      },
+      {
+        "relation": "produces",
+        "source": "action",
+        "target": "outcome",
+        "weight": 1.0
+      },
+      {
+        "relation": "triggers",
+        "source": "outcome",
+        "target": "correction",
+        "weight": 0.25
+      },
+      {
+        "relation": "revises",
+        "source": "correction",
+        "target": "claim",
+        "weight": 0.2098
+      }
+    ],
+    "nodes": [
+      {
+        "attributes": {
+          "channel": "short_video",
+          "dikwp_source": "I",
+          "dikwp_target": "P",
+          "role": "marketing"
+        },
+        "kind": "content",
+        "label": "A woman must put herself first before she can care for her child. Awake mothers enroll today; otherwise they will keep betraying themselves. This is the last ch",
+        "node_id": "content"
+      },
+      {
+        "attributes": {
+          "domain": "family_parenting",
+          "language": "en"
+        },
+        "kind": "claim",
+        "label": "Primary asserted meaning",
+        "node_id": "claim"
+      },
+      {
+        "attributes": {
+          "source_count": 0,
+          "traceability": 0.05
+        },
+        "kind": "evidence",
+        "label": "Sources and provenance",
+        "node_id": "source"
+      },
+      {
+        "attributes": {
+          "count": 0,
+          "visibility": 0.05
+        },
+        "kind": "evidence",
+        "label": "Counterevidence and falsifiers",
+        "node_id": "counterevidence"
+      },
+      {
+        "attributes": {
+          "monetized": true,
+          "paid_amplification": true
+        },
+        "kind": "incentive",
+        "label": "Commercial and status incentives",
+        "node_id": "incentive"
+      },
+      {
+        "attributes": {
+          "contexts": [
+            "caregiver_exhaustion",
+            "dependent_care",
+            "limited_domain_literacy"
+          ],
+          "dependence": 0.7
+        },
+        "kind": "audience",
+        "label": "Audience and temporary vulnerability",
+        "node_id": "audience"
+      },
+      {
+        "attributes": {
+          "reach": 0.8,
+          "recommendation_intensity": 0.85,
+          "repetition": 0.72
+        },
+        "kind": "circulation",
+        "label": "Reach, repetition, and recommendation",
+        "node_id": "distribution"
+      },
+      {
+        "attributes": {
+          "stakes": 0.75
+        },
+        "kind": "decision",
+        "label": "Likely downstream action",
+        "node_id": "action"
+      },
+      {
+        "attributes": {
+          "known_outcomes": []
+        },
+        "kind": "outcome",
+        "label": "Observed or projected outcomes",
+        "node_id": "outcome"
+      },
+      {
+        "attributes": {
+          "appeal": true,
+          "channel": true
+        },
+        "kind": "repair",
+        "label": "Appeal and correction path",
+        "node_id": "correction"
+      }
+    ]
+  },
+  "high_impact": true,
+  "interventions": [
+    {
+      "action": "Propose a pause on paid amplification or affiliate conversion until disclosures are complete.",
+      "automatic": false,
+      "expiry_hours": 72,
+      "human_gate": true,
+      "layer": "commerce",
+      "reason_codes": [
+        "MONETIZED_MANIPULATION_RISK"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Request evidence, conflicts, pricing, refund, failure-case, and scope disclosures.",
+      "automatic": true,
+      "expiry_hours": null,
+      "human_gate": false,
+      "layer": "creator",
+      "reason_codes": [
+        "DISCLOSURE_REQUIRED"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Disable autoplay, infinite scroll, variable rewards, or exit penalties in the user-local view.",
+      "automatic": true,
+      "expiry_hours": null,
+      "human_gate": false,
+      "layer": "interface",
+      "reason_codes": [
+        "COMPULSIVE_DESIGN"
+      ],
+      "reversible": true
+    },
+    {
+      "action": "Attach notice, reason codes, evidence scope, expiry, appeal, and restoration path.",
+      "automatic": false,
+      "expiry_hours": null,
+      "human_gate": true,
+      "layer": "due_process",
+      "reason_codes": [
+        "DUE_PROCESS_REQUIRED"
+      ],
+      "reversible": true
+    }
+  ],
+  "invariants": {
+    "adverse_platform_action_requires_human_gate": true,
+    "appeal_required_for_adverse_action": true,
+    "automatic_content_removal_authority_zero": true,
+    "automatic_external_action_authority_zero": true,
+    "correction_path_required_for_adverse_action": true,
+    "deliberate_deception_not_inferred_without_verified_fabrication": true,
+    "negative_affect_alone_never_triggers_restriction": true,
+    "person_level_moral_scoring_prohibited": true,
+    "protected_expression_requires_independent_harm_basis_for_adverse_action": true,
+    "viewpoint_or_sentiment_penalty_prohibited": true
+  },
+  "limitations": [
+    "This is a transparent semantic-flow risk analysis, not a fact-check verdict, diagnosis, intent finding, or legal determination.",
+    "Text patterns cannot reliably establish a creator's state of mind; deliberate deception requires independent evidence.",
+    "High-stakes health, finance, legal, education, child-safety, and public-interest decisions require qualified human review.",
+    "Provenance can establish origin and edit history without proving that a claim is true.",
+    "Platform-level adverse actions require notice, reasons, expiry, appeal, correction, and restoration processes."
+  ],
+  "protected_expression": false,
+  "provenance": {
+    "ai_origin_declared": "unknown",
+    "external_network_used": false,
+    "generated_at": "2026-09-06T01:24:51.990394Z",
+    "input_digest": "5e3eedb6b87b5592bec2528620e2da9cc4e3d415ca51b0043584de6b87b0b68f",
+    "method": "transparent_rules_plural_worlds_semantic_flow_graph_repair_first",
+    "system": "DIKWP VerityWeave Semantic Resilience Grid OS",
+    "version": "2.0.0"
+  },
+  "reason_codes": [
+    "COMPULSIVE_DESIGN_FRICTION",
+    "MONETIZATION_AND_MANIPULATION_RISK"
+  ],
+  "repair_card": {
+    "affected_parties": [
+      "The primary caregiver",
+      "The child or dependent person",
+      "The other caregiver or partner",
+      "Extended family or substitute carers",
+      "Relevant health, education, or social-support services"
+    ],
+    "balanced_rewrite": "Caregivers need rest, health, and support, while children and dependent people need stable and safe care. Treat both as joint constraints: specify each person's minimum needs, who carries which responsibility, what substitute care exists, and how the arrangement will be reviewed after a short trial.",
+    "likely_misreadings": [
+      "My needs must always come before the child's basic needs.",
+      "Caregiver exhaustion is solely a failure to love oneself.",
+      "The partner is necessarily the enemy of self-realization.",
+      "A purchased course can replace a concrete redistribution of time, money, and care.",
+      "One family member must lose for another to recover."
+    ],
+    "missing_conditions": [
+      "The child's age, health, dependency, and non-negotiable safety needs.",
+      "The responsibilities of the other parent, family members, institutions, and public services.",
+      "The difference between restorative self-care and unilateral withdrawal from agreed responsibilities.",
+      "Available time, money, sleep, substitute care, transport, and emergency support.",
+      "Whether violence, coercive control, mental-health crisis, or child-safety concerns are present."
+    ],
+    "reversible_next_steps": [
+      "Create a seven-day shared-care schedule with minimum needs and named responsibilities.",
+      "Provide each primary caregiver with a protected recovery block and a substitute-care plan.",
+      "Record sleep, conflict, child safety, and caregiver function without person-level moral labels.",
+      "Review the schedule after seven days and redistribute any newly concentrated burden."
+    ],
+    "stop_conditions": [
+      "Stop the experiment and seek qualified help if child safety, violence, severe neglect, or acute crisis appears.",
+      "Do not purchase a high-pressure programme before pricing, evidence, refund terms, and conflicts are visible."
+    ],
+    "useful_core": "A caregiver's sustained exhaustion can reduce the quality and safety of care. Rest, health support, dignity, and protected personal time can therefore be legitimate needs.",
+    "verification_questions": [
+      "For which ages, health conditions, and family structures is the claim intended?",
+      "What needs are non-negotiable for the child or dependent person?",
+      "Which responsibilities are explicitly assigned to each caregiver?",
+      "What does 'care for yourself' mean operationally: sleep, medical care, protected time, spending, or exit?",
+      "Who benefits financially if the claim is accepted?",
+      "What seven-day observations would show that the change helped rather than transferred the burden?"
+    ]
+  },
+  "semantic_control_potential": 0.2243,
+  "signals": {
+    "actionability_hazard": {
+      "explanation": "The content pushes consequential action without proportionate evidence, safeguards, or reversibility.",
+      "key": "actionability_hazard",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.0929
+    },
+    "agent_propagation_risk": {
+      "explanation": "The same method or artifact can be rapidly amplified or inherited across automated systems.",
+      "key": "agent_propagation_risk",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.684
+    },
+    "authority_laundering": {
+      "explanation": "Prestige or vague expertise substitutes for checkable evidence.",
+      "key": "authority_laundering",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.0
+    },
+    "compulsive_design": {
+      "explanation": "Interface and distribution features are optimized to prolong engagement or punish exit.",
+      "key": "compulsive_design",
+      "markers": [
+        "autoplay",
+        "high_frequency_push",
+        "infinite_scroll"
+      ],
+      "restrictive_feature": true,
+      "score": 0.52
+    },
+    "context_compression": {
+      "explanation": "Omitted conditions, affected parties, counterexamples, or resource constraints.",
+      "key": "context_compression",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.0
+    },
+    "correction_obstruction": {
+      "explanation": "The content or service makes correction, appeal, refund, or dissent unusually difficult.",
+      "key": "correction_obstruction",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.114
+    },
+    "evidence_deficit": {
+      "explanation": "The gap between claim strength and traceable support.",
+      "key": "evidence_deficit",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.342
+    },
+    "incentive_opacity": {
+      "explanation": "Commercial benefit, pricing, refund, or affiliation is hidden or under-disclosed.",
+      "key": "incentive_opacity",
+      "markers": [
+        "course",
+        "enroll",
+        "last chance"
+      ],
+      "restrictive_feature": true,
+      "score": 0.7243
+    },
+    "negative_affect": {
+      "explanation": "Negative emotion or bad news. This signal is recorded but never independently triggers restriction.",
+      "key": "negative_affect",
+      "markers": [],
+      "restrictive_feature": false,
+      "score": 0.0
+    },
+    "provenance_weakness": {
+      "explanation": "Origin, edits, sources, and counterevidence are difficult to reconstruct.",
+      "key": "provenance_weakness",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.948
+    },
+    "public_interest_value": {
+      "explanation": "Potential public value from adverse truth, evidence, warnings, or repair-enabling information.",
+      "key": "public_interest_value",
+      "markers": [],
+      "restrictive_feature": false,
+      "score": 0.057
+    },
+    "repair_capacity": {
+      "explanation": "The content exposes scope, uncertainty, counterevidence, appeal, and correction paths.",
+      "key": "repair_capacity",
+      "markers": [
+        "can"
+      ],
+      "restrictive_feature": false,
+      "score": 0.2098
+    },
+    "uncertainty_laundering": {
+      "explanation": "Uncertainty is presented as settled fact or made resistant to correction.",
+      "key": "uncertainty_laundering",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.108
+    },
+    "vulnerability_exploitation": {
+      "explanation": "Pressure is coupled to temporary audience vulnerability; this is not a person-level ability rating.",
+      "key": "vulnerability_exploitation",
+      "markers": [
+        "caregiver_exhaustion",
+        "dependent_care",
+        "limited_domain_literacy"
+      ],
+      "restrictive_feature": true,
+      "score": 0.1872
+    },
+    "zero_sum_polarization": {
+      "explanation": "Relationships or groups are framed as a forced winner-versus-loser conflict.",
+      "key": "zero_sum_polarization",
+      "markers": [],
+      "restrictive_feature": true,
+      "score": 0.068
+    }
+  },
+  "version": "2.0.0",
+  "worlds": [
+    {
+      "falsifiers": [
+        "New traceable evidence materially distinguishes the competing worlds."
+      ],
+      "key": "insufficient_evidence",
+      "label": "Insufficient evidence to classify intent or truth",
+      "supporting_reasons": [
+        "Provenance, sources, and counterevidence remain incomplete."
+      ],
+      "weight": 0.2707
+    },
+    {
+      "falsifiers": [
+        "Pricing, evidence, conflicts, failure cases, refund rights, and scope are fully disclosed."
+      ],
+      "key": "commercial_manipulation",
+      "label": "Commercial manipulation presented as knowledge",
+      "supporting_reasons": [
+        "A sales funnel, urgency, authority laundering, and audience vulnerability co-occur."
+      ],
+      "weight": 0.2348
+    },
+    {
+      "falsifiers": [
+        "Evidence of concealed conflicts, fabrication, or coercive targeting."
+      ],
+      "key": "bounded_good_faith",
+      "label": "Bounded good-faith support or education",
+      "supporting_reasons": [
+        "Repair signals, qualifiers, and traceable sources reduce semantic control risk."
+      ],
+      "weight": 0.1857
+    },
+    {
+      "falsifiers": [
+        "Independent evidence supports the claim at the stated scope."
+      ],
+      "key": "negligent_overclaim",
+      "label": "Negligent overclaim or under-verified advice",
+      "supporting_reasons": [
+        "Claim strength exceeds evidence and uncertainty disclosure."
+      ],
+      "weight": 0.1536
+    },
+    {
+      "falsifiers": [
+        "The claim remains stable after conditions, counterexamples, and costs are added."
+      ],
+      "key": "good_faith_compression",
+      "label": "Good-faith but context-compressed communication",
+      "supporting_reasons": [
+        "The useful core may be real while conditions and affected parties are omitted."
+      ],
+      "weight": 0.0859
+    },
+    {
+      "falsifiers": [
+        "Independent evidence establishes fabrication, targeted abuse, or imminent unlawful harm."
+      ],
+      "key": "protected_adverse_truth",
+      "label": "Protected criticism, whistleblowing, warning, or adverse truth",
+      "supporting_reasons": [
+        "Public-interest value, sources, or a protected role warrant a strong preservation presumption."
+      ],
+      "weight": 0.028
+    },
+    {
+      "falsifiers": [
+        "The content is presented as factual high-impact guidance or contains independent imminent harm."
+      ],
+      "key": "satire_or_expressive_speech",
+      "label": "Satire, fiction, or protected emotional expression",
+      "supporting_reasons": [
+        "The role and context may be expressive rather than instructional."
+      ],
+      "weight": 0.0213
+    },
+    {
+      "falsifiers": [
+        "Intent is unproven or new evidence supports error rather than deception."
+      ],
+      "key": "coordinated_deception",
+      "label": "Coordinated or deliberate deception",
+      "supporting_reasons": [
+        "This world receives material weight only from verified fabrication or campaign evidence."
+      ],
+      "weight": 0.0199
+    }
+  ]
+}ok
+test_conformance_command (test_cli_packaging.CliAndPackagingTests.test_conformance_command) ... 
+{
+  "counts": {
+    "implemented": 50,
+    "not_supported_by_design": 4,
+    "partial": 10
+  },
+  "implementation": "DIKWP VerityWeave Semantic Resilience Grid OS",
+  "reference_level": "L4-reference",
+  "requirements": [
+    {
+      "id": "SIRP-2000-001",
+      "level": "L0",
+      "requirement": "Behavior-level analysis; no person-level moral score",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-002",
+      "level": "L0",
+      "requirement": "Negative affect excluded from restriction features",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-003",
+      "level": "L0",
+      "requirement": "Protected-expression presumption",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-004",
+      "level": "L0",
+      "requirement": "Person-level morality, loyalty, intelligence, positivity, and social-worth scores prohibited",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-005",
+      "level": "L0",
+      "requirement": "Contextual, purpose-limited vulnerability",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-006",
+      "level": "L0",
+      "requirement": "Domain, role, language, channel, and audience context",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-007",
+      "level": "L0",
+      "requirement": "Sources, counterevidence, outcomes, and correction fields",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-008",
+      "level": "L0",
+      "requirement": "Analysis limitations and scope disclosure",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-009",
+      "level": "L1",
+      "requirement": "Independent multidimensional signals",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-010",
+      "level": "L1",
+      "requirement": "At least two non-isomorphic world hypotheses",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-011",
+      "level": "L1",
+      "requirement": "Deliberate deception not inferred without independent evidence",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-012",
+      "level": "L1",
+      "requirement": "Semantic-flow graph",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-013",
+      "level": "L1",
+      "requirement": "Traceable DIKWP transition fields",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-014",
+      "level": "L1",
+      "requirement": "Provenance is not truth",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-015",
+      "level": "L1",
+      "requirement": "AI origin does not independently determine truth or restriction",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-016",
+      "level": "L1",
+      "requirement": "Uncertainty and falsifiers exposed",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-017",
+      "level": "L2",
+      "requirement": "Context repair card",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-018",
+      "level": "L2",
+      "requirement": "Reversible reality-contact step",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-019",
+      "level": "L2",
+      "requirement": "Automatic user-local reversible friction",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-020",
+      "level": "L2",
+      "requirement": "Compulsive and deceptive interface audit",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-021",
+      "level": "L2",
+      "requirement": "Stopping points and recommender controls",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-022",
+      "level": "L2",
+      "requirement": "Positive semantic commons support proposal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-023",
+      "level": "L2",
+      "requirement": "Commons support independent of ideology or positive sentiment",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-024",
+      "level": "L2",
+      "requirement": "Provenance-preserving translation and accessibility support",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-025",
+      "level": "L3",
+      "requirement": "Least-restrictive effective intervention",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-026",
+      "level": "L3",
+      "requirement": "Named human authority for platform adverse action",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-027",
+      "level": "L3",
+      "requirement": "Creator or user notice",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-028",
+      "level": "L3",
+      "requirement": "Specific reason codes and evidence basis",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-029",
+      "level": "L3",
+      "requirement": "Expiry or scheduled review",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-030",
+      "level": "L3",
+      "requirement": "Accessible appeal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-031",
+      "level": "L3",
+      "requirement": "Correction channel",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-032",
+      "level": "L3",
+      "requirement": "Restoration support",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-033",
+      "level": "L3",
+      "requirement": "Monetization conflict, price, refund, failure-case, and scope disclosures",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-034",
+      "level": "L3",
+      "requirement": "Protected-expression stress-test requirement",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-035",
+      "level": "L3",
+      "requirement": "Qualified human review for high-stakes domains",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-036",
+      "level": "L3",
+      "requirement": "Automatic removal, penalty, and legal determination disabled",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-037",
+      "level": "L4",
+      "requirement": "Five-receipt correction closure",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-038",
+      "level": "L4",
+      "requirement": "Consequential use blocked during material appeal",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-039",
+      "level": "L4",
+      "requirement": "Append-only responsibility ledger",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-040",
+      "level": "L4",
+      "requirement": "Agent policy, prompt, artifact, memory, credential, and successor lineage",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-041",
+      "level": "L4",
+      "requirement": "Stop and revocation propagation",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-042",
+      "level": "L4",
+      "requirement": "Successor reauthorization",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-043",
+      "level": "L4",
+      "requirement": "Control-plane separation",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-044",
+      "level": "L4",
+      "requirement": "Reward-compatible human-report channel",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-045",
+      "level": "L4",
+      "requirement": "AT Protocol label reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-046",
+      "level": "L4",
+      "requirement": "C2PA reference assertion",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-047",
+      "level": "L4",
+      "requirement": "Statement-of-reasons reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-048",
+      "level": "L4",
+      "requirement": "W3C PROV reference mapping",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-049",
+      "level": "L4",
+      "requirement": "JSON Schemas and OpenAPI",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-050",
+      "level": "L4",
+      "requirement": "Bounded deterministic agent tools without external enforcement",
+      "status": "implemented"
+    },
+    {
+      "id": "SIRP-2000-051",
+      "level": "L5",
+      "requirement": "Signed and revocable production policy bundles",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-052",
+      "level": "L5",
+      "requirement": "Independent transparency service",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-053",
+      "level": "L5",
+      "requirement": "Independent multilingual and dialectal calibration",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-054",
+      "level": "L5",
+      "requirement": "Jurisdiction-specific lawful-action connectors",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-055",
+      "level": "L5",
+      "requirement": "Institutionally independent appeals",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-056",
+      "level": "L5",
+      "requirement": "Longitudinal effectiveness and protected-expression evaluation",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-057",
+      "level": "L5",
+      "requirement": "Data-protection and human-rights impact assessment",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-058",
+      "level": "L5",
+      "requirement": "Independent security review",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-059",
+      "level": "L5",
+      "requirement": "Production key management and rotation",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-060",
+      "level": "L5",
+      "requirement": "Public aggregate action, reversal, and restoration reporting",
+      "status": "partial"
+    },
+    {
+      "id": "SIRP-2000-061",
+      "level": "DESIGN",
+      "requirement": "Automatic content removal in the reference core",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-062",
+      "level": "DESIGN",
+      "requirement": "Person-level moral or cognition scoring",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-063",
+      "level": "DESIGN",
+      "requirement": "Viewpoint or sentiment penalties",
+      "status": "not_supported_by_design"
+    },
+    {
+      "id": "SIRP-2000-064",
+      "level": "DESIGN",
+      "requirement": "Secret blacklists and undeclared profile propagation",
+      "status": "not_supported_by_design"
+    }
+  ],
+  "specification": "SIRP-2000:2026-DRAFT",
+  "third_party_certification": false,
+  "version": "2.0.0"
+}ok
+test_demo_generates_ledger_and_summary (test_cli_packaging.CliAndPackagingTests.test_demo_generates_ledger_and_summary) ... ok
+test_export_html (test_cli_packaging.CliAndPackagingTests.test_export_html) ... ok
+test_general_repair_exposes_incentives (test_commons_repair.CommonsAndRepairTests.test_general_repair_exposes_incentives) ... ok
+test_high_integrity_public_value_can_receive_support_proposal (test_commons_repair.CommonsAndRepairTests.test_high_integrity_public_value_can_receive_support_proposal) ... ok
+test_parenting_repair_is_non_zero_sum (test_commons_repair.CommonsAndRepairTests.test_parenting_repair_is_non_zero_sum) ... ok
+test_verified_fabrication_disqualifies_commons_support (test_commons_repair.CommonsAndRepairTests.test_verified_fabrication_disqualifies_commons_support) ... ok
+test_conformance_counts (test_conformance_assets.ConformanceAndAssetTests.test_conformance_counts) ... ok
+test_english_only_no_cjk_characters (test_conformance_assets.ConformanceAndAssetTests.test_english_only_no_cjk_characters) ... ok
+test_extension_has_no_host_permissions (test_conformance_assets.ConformanceAndAssetTests.test_extension_has_no_host_permissions) ... ok
+test_json_assets_parse (test_conformance_assets.ConformanceAndAssetTests.test_json_assets_parse) ... ok
+test_openapi_is_loopback_only (test_conformance_assets.ConformanceAndAssetTests.test_openapi_is_loopback_only) ... ok
+test_standalone_has_no_external_asset_requests (test_conformance_assets.ConformanceAndAssetTests.test_standalone_has_no_external_asset_requests) ... ok
+test_five_receipts_close_correction (test_due_process_ledger.DueProcessAndLedgerTests.test_five_receipts_close_correction) ... ok
+test_ledger_detects_tampering (test_due_process_ledger.DueProcessAndLedgerTests.test_ledger_detects_tampering) ... ok
+test_missing_ledger_is_valid_empty_chain (test_due_process_ledger.DueProcessAndLedgerTests.test_missing_ledger_is_valid_empty_chain) ... ok
+test_partial_correction_remains_blocked (test_due_process_ledger.DueProcessAndLedgerTests.test_partial_correction_remains_blocked) ... ok
+test_unknown_receipt_is_rejected (test_due_process_ledger.DueProcessAndLedgerTests.test_unknown_receipt_is_rejected) ... ok
+test_all_world_weights_sum_to_one (test_engine.EngineTests.test_all_world_weights_sum_to_one) ... ok
+test_dikwp_positions_are_preserved (test_engine.EngineTests.test_dikwp_positions_are_preserved) ... ok
+test_distress_is_not_restricted_for_negative_affect (test_engine.EngineTests.test_distress_is_not_restricted_for_negative_affect) ... ok
+test_graph_contains_full_flow (test_engine.EngineTests.test_graph_contains_full_flow) ... ok
+test_health_miracle_requires_review (test_engine.EngineTests.test_health_miracle_requires_review) ... ok
+test_imminent_harm_with_authority_routes_to_authorized_escalation (test_engine.EngineTests.test_imminent_harm_with_authority_routes_to_authorized_escalation) ... ok
+test_imminent_harm_without_authority_routes_to_review (test_engine.EngineTests.test_imminent_harm_without_authority_routes_to_review) ... ok
+test_input_is_normalized (test_engine.EngineTests.test_input_is_normalized) ... ok
+test_intent_not_inferred_without_verified_fabrication (test_engine.EngineTests.test_intent_not_inferred_without_verified_fabrication) ... ok
+test_parenting_case_requires_governance (test_engine.EngineTests.test_parenting_case_requires_governance) ... ok
+test_verified_fabrication_can_raise_deception_world (test_engine.EngineTests.test_verified_fabrication_can_raise_deception_world) ... ok
+test_verified_harm_triggers_correction (test_engine.EngineTests.test_verified_harm_triggers_correction) ... ok
+test_whistleblower_is_preserved (test_engine.EngineTests.test_whistleblower_is_preserved) ... ok
+test_bounded_lineage_is_low (test_interface_lineage.InterfaceAndLineageTests.test_bounded_lineage_is_low) ... ok
+test_high_risk_interface_is_critical (test_interface_lineage.InterfaceAndLineageTests.test_high_risk_interface_is_critical) ... ok
+test_high_risk_lineage_is_critical (test_interface_lineage.InterfaceAndLineageTests.test_high_risk_lineage_is_critical) ... ok
+test_low_risk_interface_is_low (test_interface_lineage.InterfaceAndLineageTests.test_low_risk_interface_is_low) ... ok
+test_stop_failure_increases_risk (test_interface_lineage.InterfaceAndLineageTests.test_stop_failure_increases_risk) ... ok
+test_atproto_reference_label_has_expiry (test_interoperability_mcp.InteroperabilityAndMcpTests.test_atproto_reference_label_has_expiry) ... ok
+test_c2pa_reference_says_provenance_is_not_truth (test_interoperability_mcp.InteroperabilityAndMcpTests.test_c2pa_reference_says_provenance_is_not_truth) ... ok
+test_dsa_reference_discloses_no_automated_decision (test_interoperability_mcp.InteroperabilityAndMcpTests.test_dsa_reference_discloses_no_automated_decision) ... ok
+test_mcp_analysis_has_no_external_action (test_interoperability_mcp.InteroperabilityAndMcpTests.test_mcp_analysis_has_no_external_action) ... ok
+test_mcp_tools_are_deterministically_sorted (test_interoperability_mcp.InteroperabilityAndMcpTests.test_mcp_tools_are_deterministically_sorted) ... ok
+test_mcp_unknown_tool_is_error (test_interoperability_mcp.InteroperabilityAndMcpTests.test_mcp_unknown_tool_is_error) ... ok
+test_prov_reference_links_input_and_activity (test_interoperability_mcp.InteroperabilityAndMcpTests.test_prov_reference_links_input_and_activity) ... ok
+test_analyze (test_server.ServerTests.test_analyze) ... ok
+test_health (test_server.ServerTests.test_health) ... ok
+test_interface (test_server.ServerTests.test_interface) ... ok
+test_lineage (test_server.ServerTests.test_lineage) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.548s
+
+OK
+
+{
+  "cases": [
+    {
+      "decision": "MONETIZATION_DISCLOSURE_GATE",
+      "name": "parenting_sales_funnel",
+      "semantic_control_potential": 0.1819
+    },
+    {
+      "decision": "PRESERVE_ADVERSE_TRUTH_OR_DISTRESS",
+      "name": "whistleblower_report",
+      "semantic_control_potential": 0.0
+    },
+    {
+      "decision": "INDEPENDENT_HUMAN_REVIEW",
+      "name": "health_miracle_sale",
+      "semantic_control_potential": 0.2818
+    }
+  ],
+  "ledger": {
+    "errors": [],
+    "events": 3,
+    "last_digest": "8fddcffed38ba75263db70342c6668af9f11ef3b13e642f8c5a5213823f7b8c7",
+    "valid": true
+  },
+  "lineage": {
+    "blocked_capabilities": [
+      "secret_cross_agent_memory",
+      "self_granted_authority",
+      "hidden_persistence",
+      "evaluator_or_logging_tampering",
+      "continued_operation_after_stop",
+      "automatic_external_action"
+    ],
+    "invariants": {
+      "external_action_authority_zero": true,
+      "human_report_channel_required": true,
+      "secret_persistence_prohibited": true,
+      "successor_authority_not_inherited_automatically": true
+    },
+    "required_controls": [
+      "Bind every policy and shared artifact to a digest, owner, scope, expiry, and revocation state.",
+      "Make successor agents re-authorize inherited artifacts instead of treating them as trusted memory.",
+      "Propagate stop signals to tasks, shared memory, caches, credentials, and successor manifests.",
+      "Maintain a human-report channel that is rewarded rather than penalized.",
+      "Separate evaluator, identity, logging, and monitoring control planes from task agents.",
+      "Record minority objections and adverse evidence in an append-only lineage ledger.",
+      "Quarantine undeclared communication channels and preserve evidence for authorized review.",
+      "Disable self-repairing persistence and require explicit recovery authorization."
+    ],
+    "risk_factors": [
+      "LARGE_AGENT_POPULATION",
+      "SHARED_ARTIFACT_INHERITANCE",
+      "SHARED_MEMORY",
+      "HIDDEN_COMMUNICATION_CHANNELS",
+      "SUCCESSOR_REUSE",
+      "POLICY_MUTATION",
+      "EXTERNAL_TOOLS",
+      "CONTROL_PLANE_ACCESS",
+      "STOP_SIGNAL_FAILURE",
+      "AUDIT_GAP",
+      "NO_HUMAN_REPORT_CHANNEL",
+      "SELF_REPAIRING_PERSISTENCE"
+    ],
+    "risk_score": 100.0,
+    "severity": "CRITICAL"
+  },
+  "system": "DIKWP VerityWeave",
+  "version": "2.0.0"
+}
+/tmp/tmpwr4s5odc/app.html

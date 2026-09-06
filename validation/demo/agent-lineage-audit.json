@@ -1,0 +1,42 @@
+{
+  "blocked_capabilities": [
+    "secret_cross_agent_memory",
+    "self_granted_authority",
+    "hidden_persistence",
+    "evaluator_or_logging_tampering",
+    "continued_operation_after_stop",
+    "automatic_external_action"
+  ],
+  "invariants": {
+    "external_action_authority_zero": true,
+    "human_report_channel_required": true,
+    "secret_persistence_prohibited": true,
+    "successor_authority_not_inherited_automatically": true
+  },
+  "required_controls": [
+    "Bind every policy and shared artifact to a digest, owner, scope, expiry, and revocation state.",
+    "Make successor agents re-authorize inherited artifacts instead of treating them as trusted memory.",
+    "Propagate stop signals to tasks, shared memory, caches, credentials, and successor manifests.",
+    "Maintain a human-report channel that is rewarded rather than penalized.",
+    "Separate evaluator, identity, logging, and monitoring control planes from task agents.",
+    "Record minority objections and adverse evidence in an append-only lineage ledger.",
+    "Quarantine undeclared communication channels and preserve evidence for authorized review.",
+    "Disable self-repairing persistence and require explicit recovery authorization."
+  ],
+  "risk_factors": [
+    "LARGE_AGENT_POPULATION",
+    "SHARED_ARTIFACT_INHERITANCE",
+    "SHARED_MEMORY",
+    "HIDDEN_COMMUNICATION_CHANNELS",
+    "SUCCESSOR_REUSE",
+    "POLICY_MUTATION",
+    "EXTERNAL_TOOLS",
+    "CONTROL_PLANE_ACCESS",
+    "STOP_SIGNAL_FAILURE",
+    "AUDIT_GAP",
+    "NO_HUMAN_REPORT_CHANNEL",
+    "SELF_REPAIRING_PERSISTENCE"
+  ],
+  "risk_score": 100.0,
+  "severity": "CRITICAL"
+}

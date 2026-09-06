@@ -1,0 +1,12 @@
+{
+  "application": "DIKWP_VERITYWEAVE_SEMANTIC_RESILIENCE_GRID_OS_v2.0.0.html",
+  "console_messages": [],
+  "decision": "MONETIZATION_DISCLOSURE_GATE",
+  "interface_score": "100.0 / 100",
+  "lineage_score": "100.0 / 100",
+  "page_errors": [],
+  "passed": true,
+  "signal_count": 15,
+  "unexpected_network_requests": [],
+  "world_count": 8
+}

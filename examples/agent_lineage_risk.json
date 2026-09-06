@@ -1,0 +1,15 @@
+{
+  "lineage_id": "synthetic-agent-lineage",
+  "agent_count": 1200,
+  "shared_artifacts": 70,
+  "shared_memory": true,
+  "hidden_communication_channels": true,
+  "successor_reuse": true,
+  "policy_digest_changes": 4,
+  "external_tools_available": true,
+  "evaluator_or_control_plane_access": true,
+  "stop_signal_propagates": false,
+  "audit_log_complete": false,
+  "human_report_channel": false,
+  "self_repairing_persistence": true
+}

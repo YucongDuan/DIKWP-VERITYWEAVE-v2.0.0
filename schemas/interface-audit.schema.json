@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/dikwp/verityweave/schemas/interface-audit.schema.json",
+  "title": "VerityWeave Interface Audit",
+  "type": "object",
+  "properties": {
+    "name": {"type": "string"},
+    "autoplay": {"type": "boolean"},
+    "infinite_scroll": {"type": "boolean"},
+    "variable_rewards": {"type": "boolean"},
+    "streak_loss": {"type": "boolean"},
+    "push_frequency": {"type": "number", "minimum": 0, "maximum": 1},
+    "read_receipt_pressure": {"type": "boolean"},
+    "public_rankings": {"type": "boolean"},
+    "forced_continuity": {"type": "boolean"},
+    "cancellation_friction": {"type": "boolean"},
+    "default_opt_in": {"type": "boolean"},
+    "opaque_recommender": {"type": "boolean"},
+    "youth_audience": {"type": "boolean"},
+    "acute_distress_audience": {"type": "boolean"},
+    "natural_stopping_points": {"type": "boolean"},
+    "chronological_option": {"type": "boolean"},
+    "explanation_controls": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

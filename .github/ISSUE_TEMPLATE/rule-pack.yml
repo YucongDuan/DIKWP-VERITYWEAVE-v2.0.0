@@ -1,0 +1,24 @@
+name: Language or domain rule-pack proposal
+description: Propose a transparent, testable rule pack for a language, domain, or interface.
+title: "[Rule pack] "
+labels: ["rule-pack", "evaluation"]
+body:
+  - type: input
+    id: scope
+    attributes:
+      label: Language and domain
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and failure cases
+      description: Include protected-expression examples and counterexamples.
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Proposed tests and retirement criteria
+    validations:
+      required: true

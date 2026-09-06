@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: DIKWP VerityWeave Local API
+  version: 2.0.0
+  description: Loopback-only reference API. It does not execute platform sanctions or external actions.
+servers:
+  - url: http://127.0.0.1:8765
+paths:
+  /health:
+    get:
+      operationId: health
+      responses:
+        '200':
+          description: Service health and authority boundary
+  /analyze:
+    post:
+      operationId: analyzeSemanticFlow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./semantic-flow-case.schema.json
+      responses:
+        '200':
+          description: Semantic-flow analysis
+  /audit-interface:
+    post:
+      operationId: auditInterface
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./interface-audit.schema.json
+      responses:
+        '200':
+          description: Interface audit
+  /audit-lineage:
+    post:
+      operationId: auditAgentLineage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./agent-lineage.schema.json
+      responses:
+        '200':
+          description: Agent-lineage audit
