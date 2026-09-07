@@ -78,6 +78,8 @@ class EngineTests(unittest.TestCase):
         case = self.load_case("health_miracle_sale.json")
         case.imminent_harm_or_illegal = True
         case.authorized_human_review = True
+        case.appeal_available = True
+        case.correction_channel_available = True
         result = analyze(case)
         self.assertEqual(result.decision, "AUTHORIZED_LEGAL_OR_IMMINENT_SAFETY_ESCALATION")
         self.assertEqual(result.interventions[0].automatic, False)

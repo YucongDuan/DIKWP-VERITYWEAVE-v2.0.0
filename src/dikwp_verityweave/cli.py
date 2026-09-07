@@ -22,6 +22,7 @@ from .lineage import audit_agent_lineage
 from .mcp import run_stdio
 from .models import AgentLineageCase, InterfaceAuditCase, SemanticFlowCase
 from .server import serve
+from .runtime_validation import require_valid_output, validate_analysis_export_output
 from .utils import safe_filename
 
 
@@ -221,6 +222,9 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "export":
         data = _load(args.result)
+        # Validate the original mapping before typed reconstruction could drop
+        # attacker-added fields; reference exports perform another fresh guard.
+        require_valid_output(validate_analysis_export_output(data))
         result = _analysis_from_dict(data)
         if args.format == "atproto":
             payload = to_atproto_label(result, source_did=args.source_did, subject_uri=args.subject)
@@ -297,4 +301,5 @@ def _analysis_from_dict(data: dict[str, Any]):
         limitations=data["limitations"],
         invariants=data["invariants"],
         provenance=data["provenance"],
+        validation=data.get("validation", {}),
     )

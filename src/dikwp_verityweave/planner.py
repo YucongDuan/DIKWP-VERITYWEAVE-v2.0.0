@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from .lexicons import HIGH_IMPACT_DOMAINS, PROTECTED_ROLES
 from .models import CommonsSupport, Decision, Intervention, SemanticFlowCase, Signal
+from .runtime_validation import ACTION_CONTRACTS
 from .utils import clamp
 
 
@@ -128,6 +129,16 @@ def plan_interventions(
     if s["zero_sum_polarization"] > 0.24:
         actions.append(_i("relationship", "Generate a non-zero-sum repair card with affected parties and shared constraints.", True, True, None, False, "ZERO_SUM_FRAMING"))
         reasons.append("NON_ZERO_SUM_REPAIR_REQUIRED")
+    # Valid case inputs may declare unavailable safeguards. Withhold each
+    # adverse proposal, including recommendation limits inside HUMAN_REVIEW,
+    # instead of returning an unsafe plan or pretending the safeguards exist.
+    if (not case.appeal_available or not case.correction_channel_available) and any(
+        ACTION_CONTRACTS.get(action.action, (None, False, True, True))[2] for action in actions
+    ):
+        actions = [action for action in actions if not ACTION_CONTRACTS.get(action.action, (None, False, True, True))[2]]
+        actions.append(_i("authority", "Keep proposed restrictions inactive until an authorized reviewer establishes appeal and correction channels.", False, True, None, True, "SAFEGUARD_CHANNELS_UNAVAILABLE"))
+        decision = Decision.HUMAN_REVIEW.value
+        reasons.append("ADVERSE_PROPOSALS_WITHHELD_MISSING_SAFEGUARDS")
     if any(action.human_gate for action in actions):
         actions.append(_i("due_process", "Attach notice, reason codes, evidence scope, expiry, appeal, and restoration path.", False, True, None, True, "DUE_PROCESS_REQUIRED"))
 

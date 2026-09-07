@@ -9,6 +9,7 @@ from .engine import analyze
 from .interface_audit import audit_interface
 from .lineage import audit_agent_lineage
 from .models import AgentLineageCase, InterfaceAuditCase, SemanticFlowCase
+from .runtime_validation import OutputValidationError
 
 PROTOCOL_VERSION = "2026-07-28"
 SERVER_INFO = {"name": "dikwp-verityweave", "version": "2.0.0"}
@@ -124,6 +125,8 @@ def handle_request(request: dict[str, Any]) -> dict[str, Any] | None:
         else:
             return {"jsonrpc": "2.0", "id": request_id, "error": {"code": -32601, "message": "Method not found"}}
         return {"jsonrpc": "2.0", "id": request_id, "result": result}
+    except OutputValidationError as exc:
+        return {"jsonrpc": "2.0", "id": request_id, "error": {"code": -32603, "message": str(exc), "data": {"error": "output_validation_failed", "validation": exc.report}}}
     except (KeyError, ValueError, TypeError) as exc:
         return {"jsonrpc": "2.0", "id": request_id, "error": {"code": -32602, "message": str(exc)}}
     except Exception as exc:  # pragma: no cover

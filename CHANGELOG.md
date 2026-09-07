@@ -1,5 +1,14 @@
 # Changelog
 
+## Reproducibility remediation - 2026-09-07 (source revision)
+
+- Replaced unconditional invariant flags with recomputed local-output checks and evidence.
+- Withheld invalid generated action plans; checked every adverse intervention rather than accepting any one human-gated item.
+- Kept real external-system enforcement explicitly unverified.
+- Added negative-case tests, standalone JavaScript validation, and a unified `make verify` command.
+- Distinguished declared conformance requirements from observed test results.
+- Preserved historical validation records and the original upstream version identifier.
+
 ## 2.0.0 — 2026-09-06
 
 - Reframed information integrity as a semantic-flow and circulation problem rather than a sentiment classifier.

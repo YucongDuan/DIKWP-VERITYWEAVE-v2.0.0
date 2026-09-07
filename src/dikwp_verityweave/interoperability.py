@@ -4,9 +4,18 @@ from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from .models import AnalysisResult
+from .runtime_validation import require_valid_output, validate_analysis_export_output
+
+
+def _validation_metadata(result: AnalysisResult) -> dict[str, Any]:
+    report = validate_analysis_export_output(result)
+    require_valid_output(report)
+    return {"validation": report, "reported_analysis_validation": result.validation,
+            "reported_analysis_validation_authentication": "NOT_VERIFIED"}
 
 
 def to_atproto_label(result: AnalysisResult, *, source_did: str, subject_uri: str, subject_cid: str | None = None) -> dict[str, Any]:
+    validation = _validation_metadata(result)
     now = datetime.now(timezone.utc)
     label_value = _label_value(result.decision)
     payload: dict[str, Any] = {
@@ -19,6 +28,7 @@ def to_atproto_label(result: AnalysisResult, *, source_did: str, subject_uri: st
         "sig": None,
         "reference_only": True,
         "reason_codes": result.reason_codes,
+        **validation,
     }
     if subject_cid:
         payload["cid"] = subject_cid
@@ -27,6 +37,7 @@ def to_atproto_label(result: AnalysisResult, *, source_did: str, subject_uri: st
 
 def to_dsa_statement_of_reasons_reference(result: AnalysisResult, *, content_id: str) -> dict[str, Any]:
     return {
+        **_validation_metadata(result),
         "type": "DSA_STATEMENT_OF_REASONS_REFERENCE_MAPPING",
         "content_id": content_id,
         "decision_ground": result.decision,
@@ -47,6 +58,7 @@ def to_dsa_statement_of_reasons_reference(result: AnalysisResult, *, content_id:
 
 def to_c2pa_reference_assertion(result: AnalysisResult) -> dict[str, Any]:
     return {
+        **_validation_metadata(result),
         "label": "org.dikwp.verityweave.semantic-analysis",
         "data": {
             "case_digest": result.case_digest,
@@ -62,9 +74,11 @@ def to_c2pa_reference_assertion(result: AnalysisResult) -> dict[str, Any]:
 
 
 def to_prov_jsonld(result: AnalysisResult) -> dict[str, Any]:
+    validation = _validation_metadata(result)
     activity_id = f"urn:sha256:{result.case_digest}#analysis"
     entity_id = f"urn:sha256:{result.case_digest}#input"
     return {
+        **validation,
         "@context": {
             "prov": "http://www.w3.org/ns/prov#",
             "dikwp": "https://example.org/dikwp/verityweave#",

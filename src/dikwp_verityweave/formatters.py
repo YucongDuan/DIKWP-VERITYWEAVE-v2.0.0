@@ -33,6 +33,10 @@ def analysis_markdown(result: AnalysisResult) -> str:
     question_lines = "\n".join(f"- {item}" for item in result.repair_card.verification_questions)
     next_lines = "\n".join(f"- {item}" for item in result.repair_card.reversible_next_steps)
     limits = "\n".join(f"- {item}" for item in result.limitations)
+    validation_lines = "\n".join(
+        f"- `{check['id']}`: **{check['status']}** - {' '.join(check['evidence'])}"
+        for check in result.validation.get("checks", [])
+    ) or "No executable validation receipt is available for this imported result."
     return f"""# VerityWeave Semantic Flow Report
 
 - **Decision:** `{result.decision}`
@@ -83,4 +87,8 @@ def analysis_markdown(result: AnalysisResult) -> str:
 ## Limitations
 
 {limits}
+
+## Executable validation (local output only)
+
+{validation_lines}
 """

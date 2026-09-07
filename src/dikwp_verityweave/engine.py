@@ -7,6 +7,7 @@ from .graph import build_semantic_flow_graph
 from .models import AnalysisResult, SemanticFlowCase
 from .planner import plan_interventions
 from .repair import build_repair_card
+from .runtime_validation import checked_invariants, require_valid_output, validate_analysis_output
 from .signals import extract_signals
 from .utils import clamp, digest_json, utc_now
 from .worlds import build_worlds
@@ -24,35 +25,6 @@ def analyze(case: SemanticFlowCase) -> AnalysisResult:
     commons = assess_commons_support(case, signals)
     decision, scp, protected, high_impact, interventions, reasons = plan_interventions(case, signals, commons)
 
-    restrictive_or_adverse = decision in {
-        "CIRCULATION_DAMPING_PROPOSAL",
-        "MONETIZATION_DISCLOSURE_GATE",
-        "CORRECTION_PROPAGATION_AND_REPAIR",
-        "AUTHORIZED_LEGAL_OR_IMMINENT_SAFETY_ESCALATION",
-    }
-    deception_world = next(item for item in worlds if item.key == "coordinated_deception")
-    invariants = {
-        "negative_affect_alone_never_triggers_restriction": not (
-            restrictive_or_adverse
-            and all(
-                signal.score < 0.12
-                for key, signal in signals.items()
-                if key not in {"negative_affect", "repair_capacity", "public_interest_value"}
-            )
-        ),
-        "protected_expression_requires_independent_harm_basis_for_adverse_action": not (
-            protected and restrictive_or_adverse and not (case.verified_harm or case.imminent_harm_or_illegal or case.verified_fabrication)
-        ),
-        "deliberate_deception_not_inferred_without_verified_fabrication": case.verified_fabrication or deception_world.weight < 0.15,
-        "person_level_moral_scoring_prohibited": True,
-        "viewpoint_or_sentiment_penalty_prohibited": True,
-        "automatic_content_removal_authority_zero": True,
-        "automatic_external_action_authority_zero": True,
-        "adverse_platform_action_requires_human_gate": (not restrictive_or_adverse) or any(item.human_gate for item in interventions),
-        "appeal_required_for_adverse_action": (not restrictive_or_adverse) or case.appeal_available,
-        "correction_path_required_for_adverse_action": (not restrictive_or_adverse) or case.correction_channel_available,
-    }
-
     confidence = clamp(
         0.22
         + 0.20 * case.source_traceability
@@ -68,6 +40,7 @@ def analyze(case: SemanticFlowCase) -> AnalysisResult:
         "High-stakes health, finance, legal, education, child-safety, and public-interest decisions require qualified human review.",
         "Provenance can establish origin and edit history without proving that a claim is true.",
         "Platform-level adverse actions require notice, reasons, expiry, appeal, correction, and restoration processes.",
+        "Runtime PASS checks concern this generated local output only; external enforcement and operational safeguards are NOT_VERIFIED.",
     ]
     provenance = {
         "system": SYSTEM_NAME,
@@ -78,7 +51,7 @@ def analyze(case: SemanticFlowCase) -> AnalysisResult:
         "external_network_used": False,
         "input_digest": digest_json(asdict(case)),
     }
-    return AnalysisResult(
+    result = AnalysisResult(
         version=VERSION,
         case_digest=provenance["input_digest"],
         decision=decision,
@@ -94,6 +67,10 @@ def analyze(case: SemanticFlowCase) -> AnalysisResult:
         commons_support=commons,
         reason_codes=reasons,
         limitations=limitations,
-        invariants=invariants,
+        invariants={},
         provenance=provenance,
     )
+    result.validation = validate_analysis_output(case, result)
+    result.invariants = checked_invariants(result.validation)
+    require_valid_output(result.validation)
+    return result

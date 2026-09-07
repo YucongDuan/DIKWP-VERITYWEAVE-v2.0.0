@@ -13,10 +13,17 @@ ROOT = Path(__file__).resolve().parents[1]
 class ConformanceAndAssetTests(unittest.TestCase):
     def test_conformance_counts(self) -> None:
         value = conformance_statement()
-        self.assertEqual(value["counts"]["implemented"], 50)
+        self.assertEqual(value["counts"]["implemented"], 46)
+        self.assertEqual(value["counts"]["proposal_only"], 4)
         self.assertEqual(value["counts"]["partial"], 10)
         self.assertEqual(value["counts"]["not_supported_by_design"], 4)
         self.assertFalse(value["third_party_certification"])
+        self.assertFalse(value["test_execution_performed"])
+        self.assertEqual(value["claim_type"], "author_self_declaration")
+        self.assertEqual(value["external_enforcement"], "NOT_VERIFIED")
+        for requirement in value["requirements"]:
+            if requirement["id"] in {f"SIRP-2000-{n:03d}" for n in range(41, 45)}:
+                self.assertEqual(requirement["status"], "proposal_only")
 
     def test_json_assets_parse(self) -> None:
         for path in list((ROOT / "examples").glob("*.json")) + list((ROOT / "resources").glob("*.json")) + list((ROOT / "schemas").glob("*.json")):
@@ -36,9 +43,12 @@ class ConformanceAndAssetTests(unittest.TestCase):
         manifest = json.loads((ROOT / "browser_extension/manifest.json").read_text())
         self.assertEqual(manifest["host_permissions"], [])
 
-    def test_english_only_no_cjk_characters(self) -> None:
+    def test_runtime_surfaces_use_english_not_documentation(self) -> None:
         cjk = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
-        paths = [p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in {".py", ".md", ".json", ".html", ".js", ".yaml", ".yml", ".toml"}]
+        # Bilingual README/integration guidance and author-supplied dedications
+        # are documentation, not accidental UI localization regressions.
+        roots = [ROOT / name for name in ("src", "web", "browser_extension", "schemas", "resources", "formal")]
+        paths = [p for root in roots for p in root.rglob("*") if p.is_file() and p.suffix.lower() in {".py", ".json", ".html", ".js", ".yaml", ".yml", ".toml"}]
         violations = [str(p.relative_to(ROOT)) for p in paths if cjk.search(p.read_text(encoding="utf-8", errors="ignore"))]
         self.assertEqual(violations, [])
 

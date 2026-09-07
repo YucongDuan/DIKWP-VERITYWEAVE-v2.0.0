@@ -9,6 +9,7 @@ from .engine import analyze
 from .interface_audit import audit_interface
 from .lineage import audit_agent_lineage
 from .models import AgentLineageCase, InterfaceAuditCase, SemanticFlowCase
+from .runtime_validation import OutputValidationError
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -45,6 +46,8 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(404, {"error": "not_found"})
                 return
             self._send(200, result)
+        except OutputValidationError as exc:
+            self._send(422, {"error": "output_validation_failed", "detail": str(exc), "validation": exc.report})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
             self._send(400, {"error": "invalid_request", "detail": str(exc)})
         except Exception as exc:  # pragma: no cover - defensive boundary

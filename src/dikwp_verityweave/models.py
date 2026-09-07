@@ -254,6 +254,7 @@ class AnalysisResult:
     limitations: list[str]
     invariants: dict[str, bool]
     provenance: dict[str, Any]
+    validation: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -267,6 +268,7 @@ class InterfaceAuditResult:
     automatic_local_actions: list[str]
     platform_proposals: list[str]
     invariants: dict[str, bool]
+    validation: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -280,6 +282,8 @@ class AgentLineageResult:
     required_controls: list[str]
     blocked_capabilities: list[str]
     invariants: dict[str, bool]
+    validation: dict[str, Any] = field(default_factory=dict)
+    input_observations: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

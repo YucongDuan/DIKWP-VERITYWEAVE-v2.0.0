@@ -44,10 +44,10 @@ REQUIREMENTS: list[tuple[str, str, str, str]] = [
     ("SIRP-2000-038", "L4", "Consequential use blocked during material appeal", "implemented"),
     ("SIRP-2000-039", "L4", "Append-only responsibility ledger", "implemented"),
     ("SIRP-2000-040", "L4", "Agent policy, prompt, artifact, memory, credential, and successor lineage", "implemented"),
-    ("SIRP-2000-041", "L4", "Stop and revocation propagation", "implemented"),
-    ("SIRP-2000-042", "L4", "Successor reauthorization", "implemented"),
-    ("SIRP-2000-043", "L4", "Control-plane separation", "implemented"),
-    ("SIRP-2000-044", "L4", "Reward-compatible human-report channel", "implemented"),
+    ("SIRP-2000-041", "L4", "Stop and revocation propagation", "proposal_only"),
+    ("SIRP-2000-042", "L4", "Successor reauthorization", "proposal_only"),
+    ("SIRP-2000-043", "L4", "Control-plane separation", "proposal_only"),
+    ("SIRP-2000-044", "L4", "Reward-compatible human-report channel", "proposal_only"),
     ("SIRP-2000-045", "L4", "AT Protocol label reference mapping", "implemented"),
     ("SIRP-2000-046", "L4", "C2PA reference assertion", "implemented"),
     ("SIRP-2000-047", "L4", "Statement-of-reasons reference mapping", "implemented"),
@@ -81,9 +81,20 @@ def conformance_statement() -> dict:
         "version": VERSION,
         "reference_level": "L4-reference",
         "third_party_certification": False,
+        "claim_type": "author_self_declaration",
+        "test_execution_performed": False,
+        "external_enforcement": "NOT_VERIFIED",
+        "status_definitions": {
+            "implemented": "Self-declared reference functionality, not a runtime test result or production-enforcement certificate.",
+            "proposal_only": "The local audit emits a requirement/proposal but does not implement the corresponding external control.",
+            "partial": "Incomplete production or institutional capability; not an assurance of operational readiness.",
+            "not_supported_by_design": "Intentionally outside the supported reference capabilities.",
+        },
+        "evidence_boundary": "Counts classify source-level author claims. They are not pass counts. Run tests, static audit and the bounded model separately; a bounded workflow model does not establish real-agent enforcement.",
         "counts": counts,
         "requirements": [
-            {"id": item_id, "level": level, "requirement": text, "status": status}
+            {"id": item_id, "level": level, "requirement": text, "status": status,
+             "evidence_type": "proposal_requirement_only" if status == "proposal_only" else "author_self_declaration"}
             for item_id, level, text, status in REQUIREMENTS
         ],
     }

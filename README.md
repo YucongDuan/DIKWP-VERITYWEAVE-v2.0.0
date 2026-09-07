@@ -2,7 +2,34 @@
 
 > **Reduce manipulation without censoring adverse truth.**
 
+## Reproducibility remediation - 7 September 2026
+
+The earlier `invariants` output included unconditional `True` policy declarations.
+This source revision replaces those declarations with independently recomputed
+checks of generated output, rejects invalid action plans, and adds deliberately
+invalid-output tests. A checked local result is **not** proof of real-world
+enforcement, factual truth, clinical validity, consciousness, or certification.
+
+Start with [the remediation and evidence guide](docs/RUNTIME_VALIDATION_EN.md).
+The four standalone HTML distributions contain the same offline validation code.
+Original validation receipts remain historical snapshots; rerun the commands below
+to obtain evidence for your own checkout.
+
+```bash
+# Python 3.10+ and Node.js 20+; no dependency install is required for these tests.
+make verify
+```
+
+`make verify` runs the Python suite, source-pattern audit, bounded-state checker,
+and JavaScript negative-case tests. A failure returns a nonzero exit status. The
+JavaScript suite checks the embedded offline implementation, not the browser's
+rendering engine or a deployed third-party service. ZIP downloads are optional
+delivery artifacts; the browsable source tree is the development entry point.
+
 ![SIRP-2000 L4 reference](assets/SIRP_2000_L4_REFERENCE_BADGE.svg)
+
+This is a historical self-declared reference-profile badge, not a certification
+or a fresh test result. See the generated validation receipt for checked evidence.
 
 VerityWeave is an English-only, offline-first, Apache-2.0 reference system for governing **semantic flows** rather than ranking people. It connects content, sources, counterevidence, context, incentives, audience conditions, interface design, recommender circulation, invited action, outcomes, appeals, and agent lineage in one inspectable workflow.
 

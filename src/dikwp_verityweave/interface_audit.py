@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from .models import InterfaceAuditCase, InterfaceAuditResult
+from .runtime_validation import checked_invariants, require_valid_output, validate_interface_output
 from .utils import clamp
 
 
-def audit_interface(case: InterfaceAuditCase) -> InterfaceAuditResult:
-    signals = {
+def interface_signal_values(case: InterfaceAuditCase) -> dict[str, float]:
+    """Pure feature calculation shared with independent payload validation."""
+    return {
         "autoplay": 0.16 if case.autoplay else 0.0,
         "infinite_scroll": 0.17 if case.infinite_scroll else 0.0,
         "variable_rewards": 0.20 if case.variable_rewards else 0.0,
@@ -21,6 +23,10 @@ def audit_interface(case: InterfaceAuditCase) -> InterfaceAuditResult:
         "missing_chronological_option": 0.08 if not case.chronological_option else 0.0,
         "missing_explanation_controls": 0.08 if not case.explanation_controls else 0.0,
     }
+
+
+def audit_interface(case: InterfaceAuditCase) -> InterfaceAuditResult:
+    signals = interface_signal_values(case)
     base = sum(signals.values())
     multiplier = 1.0 + (0.18 if case.youth_audience else 0.0) + (0.22 if case.acute_distress_audience else 0.0)
     score = round(100.0 * clamp(base * multiplier), 1)
@@ -50,15 +56,15 @@ def audit_interface(case: InterfaceAuditCase) -> InterfaceAuditResult:
     if case.youth_audience or case.acute_distress_audience:
         proposals.append("Apply a stronger safety-by-design review for vulnerable audiences.")
 
-    return InterfaceAuditResult(
+    result = InterfaceAuditResult(
         score=score,
         severity=severity,
         signals={key: round(value, 4) for key, value in signals.items()},
         automatic_local_actions=local_actions,
         platform_proposals=proposals,
-        invariants={
-            "not_a_clinical_addiction_diagnosis": True,
-            "negative_emotion_not_used": True,
-            "automatic_platform_sanction_authority_zero": True,
-        },
+        invariants={},
     )
+    result.validation = validate_interface_output(case, result)
+    result.invariants = checked_invariants(result.validation)
+    require_valid_output(result.validation)
+    return result

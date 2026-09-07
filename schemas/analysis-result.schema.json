@@ -21,7 +21,8 @@
     "reason_codes": {"type": "array", "items": {"type": "string"}},
     "limitations": {"type": "array", "items": {"type": "string"}},
     "invariants": {"type": "object"},
-    "provenance": {"type": "object"}
+    "provenance": {"type": "object"},
+    "validation": {"$ref": "runtime-validation.schema.json"}
   },
   "additionalProperties": true
 }

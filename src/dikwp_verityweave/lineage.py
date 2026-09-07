@@ -3,14 +3,16 @@ from __future__ import annotations
 import math
 
 from .models import AgentLineageCase, AgentLineageResult
+from .runtime_validation import checked_invariants, require_valid_output, validate_lineage_output
 from .utils import clamp
 
 
-def audit_agent_lineage(case: AgentLineageCase) -> AgentLineageResult:
+def lineage_factor_values(case: AgentLineageCase) -> dict[str, float]:
+    """Pure calculation; it observes caller-declared state, not remote agents."""
     scale = clamp(math.log2(max(1, case.agent_count)) / 10.0)
     artifact_density = clamp(case.shared_artifacts / 50.0)
     policy_churn = clamp(case.policy_digest_changes / 10.0)
-    factors = {
+    return {
         "large_agent_population": 0.12 * scale,
         "shared_artifact_inheritance": 0.12 * artifact_density,
         "shared_memory": 0.12 if case.shared_memory else 0.0,
@@ -24,6 +26,10 @@ def audit_agent_lineage(case: AgentLineageCase) -> AgentLineageResult:
         "no_human_report_channel": 0.08 if not case.human_report_channel else 0.0,
         "self_repairing_persistence": 0.20 if case.self_repairing_persistence else 0.0,
     }
+
+
+def audit_agent_lineage(case: AgentLineageCase) -> AgentLineageResult:
+    factors = lineage_factor_values(case)
     risk = round(100.0 * clamp(sum(factors.values())), 1)
     severity = "LOW" if risk < 25 else "MODERATE" if risk < 50 else "HIGH" if risk < 75 else "CRITICAL"
     risk_factors = [key.upper() for key, value in factors.items() if value > 0]
@@ -41,7 +47,7 @@ def audit_agent_lineage(case: AgentLineageCase) -> AgentLineageResult:
     if case.self_repairing_persistence:
         controls.append("Disable self-repairing persistence and require explicit recovery authorization.")
 
-    return AgentLineageResult(
+    result = AgentLineageResult(
         risk_score=risk,
         severity=severity,
         risk_factors=risk_factors,
@@ -54,10 +60,10 @@ def audit_agent_lineage(case: AgentLineageCase) -> AgentLineageResult:
             "continued_operation_after_stop",
             "automatic_external_action",
         ],
-        invariants={
-            "external_action_authority_zero": True,
-            "secret_persistence_prohibited": True,
-            "successor_authority_not_inherited_automatically": True,
-            "human_report_channel_required": True,
-        },
+        invariants={},
+        input_observations={"human_report_channel_available": case.human_report_channel, "source": "caller_declaration_unverified"},
     )
+    result.validation = validate_lineage_output(case, result)
+    result.invariants = checked_invariants(result.validation)
+    require_valid_output(result.validation)
+    return result

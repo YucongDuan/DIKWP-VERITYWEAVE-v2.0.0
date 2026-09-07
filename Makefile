@@ -1,6 +1,6 @@
 PYTHON ?= python
 
-.PHONY: test demo conformance audit model-check
+.PHONY: test demo conformance audit model-check test-browser verify
 
 test:
 	PYTHONPATH=src $(PYTHON) -m unittest discover -s tests -v
@@ -16,3 +16,8 @@ audit:
 
 model-check:
 	PYTHONPATH=src $(PYTHON) formal/bounded_model_check.py --output validation/BOUNDED_MODEL_CHECK_RECEIPT.json
+
+test-browser:
+	node tests/test_browser_invariants.js
+
+verify: test audit model-check test-browser
