@@ -49,7 +49,8 @@ class ConformanceAndAssetTests(unittest.TestCase):
         # are documentation, not accidental UI localization regressions.
         roots = [ROOT / name for name in ("src", "web", "browser_extension", "schemas", "resources", "formal")]
         paths = [p for root in roots for p in root.rglob("*") if p.is_file() and p.suffix.lower() in {".py", ".json", ".html", ".js", ".yaml", ".yml", ".toml"}]
-        violations = [str(p.relative_to(ROOT)) for p in paths if cjk.search(p.read_text(encoding="utf-8", errors="ignore"))]
+        # Keep the language gate while allowing the creator\'s exact Chinese name.
+        violations = [str(p.relative_to(ROOT)) for p in paths if cjk.search(p.read_text(encoding="utf-8", errors="ignore").replace("\u6bb5\u7389\u806a", ""))]
         self.assertEqual(violations, [])
 
 
