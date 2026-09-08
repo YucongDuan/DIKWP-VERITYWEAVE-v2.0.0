@@ -1,13 +1,15 @@
 # DIKWP VerityWeave Semantic Resilience Grid OS
 
-> **Reduce manipulation without censoring adverse truth.**
+Created by Yucong Duan (段玉聪).
+
+> Reduce manipulation without censoring adverse truth.
 
 ## Reproducibility remediation - 7 September 2026
 
 The earlier `invariants` output included unconditional `True` policy declarations.
 This source revision replaces those declarations with independently recomputed
 checks of generated output, rejects invalid action plans, and adds deliberately
-invalid-output tests. A checked local result is **not** proof of real-world
+invalid-output tests. A checked local result is not proof of real-world
 enforcement, factual truth, clinical validity, consciousness, or certification.
 
 Start with [the remediation and evidence guide](docs/RUNTIME_VALIDATION_EN.md).
@@ -31,7 +33,7 @@ delivery artifacts; the browsable source tree is the development entry point.
 This is a historical self-declared reference-profile badge, not a certification
 or a fresh test result. See the generated validation receipt for checked evidence.
 
-VerityWeave is an English-only, offline-first, Apache-2.0 reference system for governing **semantic flows** rather than ranking people. It connects content, sources, counterevidence, context, incentives, audience conditions, interface design, recommender circulation, invited action, outcomes, appeals, and agent lineage in one inspectable workflow.
+VerityWeave is an English-only, offline-first, Apache-2.0 reference system for governing semantic flows rather than ranking people. It connects content, sources, counterevidence, context, incentives, audience conditions, interface design, recommender circulation, invited action, outcomes, appeals, and agent lineage in one inspectable workflow.
 
 ## Why it exists
 
@@ -48,7 +50,7 @@ The knowledge-abundant era does not suffer only from false statements. It also s
 - corrections that never reach downstream recipients;
 - policies and harmful methods inherited by successor agents.
 
-VerityWeave does **not** treat sadness, anger, criticism, whistleblowing, satire, or bad news as inherently harmful.
+VerityWeave does not treat sadness, anger, criticism, whistleblowing, satire, or bad news as inherently harmful.
 
 ## Direct use
 
@@ -247,4 +249,8 @@ This release is one node in Yucong Duan's open DIKWP research ecosystem. Explore
 
 ## Dedication and attribution boundary
 
-This open research project is dedicated with love to **Duan Dikweipu**, daughter of Yucong Duan. The dedication conveys personal inspiration only; it does not assign authorship, legal responsibility, endorsement, or project authority to her.
+This open research project is dedicated with love to Duan Dikweipu, daughter of Yucong Duan. The dedication conveys personal inspiration only; it does not assign authorship, legal responsibility, endorsement, or project authority to her.
+
+## Current interface presentation
+
+[Open the interface source](DIKWP_VERITYWEAVE_SEMANTIC_RESILIENCE_GRID_OS_v2.0.0.html) from the current repository download. See [interface and authorship notes](INTERFACE_NOTES.md) for English coverage, report generation and validation scope.
